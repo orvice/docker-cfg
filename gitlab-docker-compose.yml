@@ -1,6 +1,10 @@
 gitlab:
   image: gitlab/gitlab-ce:latest
   volumes:
-    - $PWD/etc:/etc/gitlab:Z
-    - $PWD/opt:/var/opt/gitlab:Z
-    - $PWD/log:/var/log/gitlab:Z
+    - $PWD/etc:/etc/gitlab
+    - $PWD/opt:/var/opt/gitlab
+    - $PWD/log:/var/log/gitlab
+  ports:
+    - "10080:80"
+    - "10022:22"
+    - "10443:443"

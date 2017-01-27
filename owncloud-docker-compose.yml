@@ -10,7 +10,7 @@ services:
       - $PWD/mysql_data:/var/lib/mysql:Z
 
   owncloud:
-    image: owncloud
+    image: owncloud:9.1-apache
     ports:
       - 8080:80
     volumes:
