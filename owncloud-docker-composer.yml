@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+
+  owncloud:
+    image: owncloud
+    ports:
+      - 8080:80
+
+  owncloud-mysql:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: example

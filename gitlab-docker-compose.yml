@@ -1,0 +1,6 @@
+gitlab:
+  image: gitlab/gitlab-ce:latest
+  volumes:
+    - $PWD/etc:/etc/gitlab:Z
+    - $PWD/opt:/var/opt/gitlab:Z
+    - $PWD/log:/var/log/gitlab:Z
