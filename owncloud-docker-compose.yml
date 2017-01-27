@@ -2,6 +2,13 @@ version: '2'
 
 services:
 
+  owncloud-mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: owncloud
+    volumes:
+      - $PWD/mysql_data:/var/lib/mysql
+
   owncloud:
     image: owncloud
     ports:
@@ -12,8 +19,5 @@ services:
       - $PWD/config:/var/www/html/config
       - $PWD/data:/var/www/html/data
 
-  owncloud-mysql:
-    image: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: owncloud
+
     
