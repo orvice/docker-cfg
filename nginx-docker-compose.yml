@@ -2,6 +2,7 @@ nginx:
   image: nginx
   volumes:
     - /etc/nginx:/etc/nginx:ro
+    - /var/log/nginx:/var/log/nginx
   ports:
     - "8000:80"
   environment:
