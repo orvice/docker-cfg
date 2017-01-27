@@ -6,5 +6,5 @@
 
 ```
 cd /path/to/owncloud
-wget https://raw.githubusercontent.com/orvice/docker-cfg/master/owncloud-docker-composer.yml -O docker-composer.yml
+wget https://raw.githubusercontent.com/orvice/docker-cfg/master/owncloud-docker-compose.yml -O docker-compose.yml
 ```
