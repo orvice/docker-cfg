@@ -1,0 +1,7 @@
+redis:
+  image: redis
+  volumes:
+    - $PWD/config:/usr/local/etc/redis/
+    - $PWD/data:/data
+  ports:
+    - "127.0.0.1:6379:6379"
