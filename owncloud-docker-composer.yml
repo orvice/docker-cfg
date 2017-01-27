@@ -6,8 +6,14 @@ services:
     image: owncloud
     ports:
       - 8080:80
+    volumes:
+      - $PWD/html:/var/www/html
+      - $PWD/apps:/var/www/html/apps
+      - $PWD/config:/var/www/html/config
+      - $PWD/data:/var/www/html/data
 
   owncloud-mysql:
-    image: mariadb
+    image: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: owncloud
+    
