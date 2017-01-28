@@ -1,4 +1,7 @@
-jenkins:
+version: "2"
+
+services:
+  jenkins:
   image: jenkins
   volumes:
     - $PWD/data:/var/jenkins_home
