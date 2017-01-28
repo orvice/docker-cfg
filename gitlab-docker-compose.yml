@@ -4,7 +4,7 @@ services:
   gitlab:
     image: 'gitlab/gitlab-ce:latest'
     restart: always
-    hostname: 'git.orx.me'
+    #hostname: 'git.orx.me'
     volumes:
       - $PWD/etc:/etc/gitlab
       - $PWD/opt:/var/opt/gitlab
@@ -12,11 +12,11 @@ services:
     ports:
       - "10080:80"
       - "10022:22"
-      - "10443:443"
+      #- "10443:443"
     environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        external_url 'https://git.orx.me'
-        gitlab_rails['gitlab_ssh_host'] = git
-        gitlab_rails['gitlab_ssh_port'] = 10022
+      #GITLAB_OMNIBUS_CONFIG: |
+        #external_url = 'https://git.orx.me'
+        #gitlab_rails['gitlab_ssh_host'] = 'git.me'
+        #gitlab_rails['gitlab_ssh_port'] = 10022
         # Add any other gitlab.rb configuration here, each on its own line
     container_name: "orx_gitlab"
