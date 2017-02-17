@@ -8,6 +8,7 @@ services:
       - $PWD/config:/root/.minio
     ports:
       - "9000:9000"
-    command: server /export
+    command: "server /export"
+    container_name: "minio"
 
  
