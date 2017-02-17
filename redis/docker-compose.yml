@@ -3,9 +3,10 @@ version: "2"
 services:
   redis:
     image: redis
+    restart: always
     volumes:
       - $PWD/config:/usr/local/etc/redis/
       - $PWD/data:/data
-   ports:
+    ports:
      - "127.0.0.1:6379:6379"
  

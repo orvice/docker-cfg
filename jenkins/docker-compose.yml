@@ -3,6 +3,7 @@ version: "2"
 services:
   jenkins:
   image: jenkins
+  restart: always
   volumes:
     - $PWD/data:/var/jenkins_home
   ports:

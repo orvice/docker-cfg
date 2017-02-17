@@ -3,6 +3,7 @@ version: "2"
 services:
   minio:
     image: minio/minio
+    restart: always
     volumes:
       - $PWD/data:/export
       - $PWD/config:/root/.minio
