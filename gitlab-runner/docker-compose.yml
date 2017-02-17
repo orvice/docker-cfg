@@ -1,0 +1,6 @@
+redis:
+  image: gitlab/gitlab-runner:latest
+  restart: always
+  volumes:
+    - $PWD/config:/etc/gitlab-runner 
+  container_name: gitlab-runner
