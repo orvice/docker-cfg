@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  minio:
+    image: minio/minio
+    volumes:
+      - /mnt/export/minio1:/export
+      - /mnt/config/minio1:/root/.minio
+    ports:
+      - "9000:9000"
+ 
