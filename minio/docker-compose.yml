@@ -4,8 +4,10 @@ services:
   minio:
     image: minio/minio
     volumes:
-      - /mnt/export/minio1:/export
-      - /mnt/config/minio1:/root/.minio
+      - $PWD/data:/export
+      - $PWD/config:/root/.minio
     ports:
       - "9000:9000"
+    command: server /export
+
  
