@@ -3,6 +3,7 @@ version: "2"
 services:
   nginx:
     image: nginx
+    restart: always
     volumes:
       - /etc/nginx:/etc/nginx:ro
       - /var/log/nginx:/var/log/nginx

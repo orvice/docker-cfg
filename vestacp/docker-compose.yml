@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  vestacp:
+    image: babim/vestacp
+    restart: always
+    volumes:
+      - $PWD/data:/vesta
+    ports:
+      - "2222:22"
+      - "80:80"
+      - "8083:8083"
+      - "3306:3306"
+      - "443:443"
+      - "25:25"
+      - "993:993"
+      - "110:110"
+      - "53:53"
+      - "54:54"
+ 
