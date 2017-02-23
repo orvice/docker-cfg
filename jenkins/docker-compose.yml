@@ -2,10 +2,10 @@ version: "2"
 
 services:
   jenkins:
-  image: jenkins
-  restart: always
-  volumes:
-    - $PWD/data:/var/jenkins_home
-  ports:
-    - "8080:8080"
-    - "50000:50000"
+    image: jenkins
+    restart: always
+    volumes:
+      - $PWD/data:/var/jenkins_home
+    ports:
+      - "8080:8080"
+      - "50000:50000"

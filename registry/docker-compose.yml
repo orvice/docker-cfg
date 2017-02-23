@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  registry:
+    image: registry:2
+    restart: always
+    volumes:
+      - $PWD/data:/var/lib/registry
+    ports:
+      - "127.0.0.1:5000:5000" 
+    container_name: "docker_hub"
