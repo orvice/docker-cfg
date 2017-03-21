@@ -6,6 +6,19 @@ services:
     restart: always
     volumes:
       - $PWD/data:/var/lib/registry
-    ports:
-      - "127.0.0.1:5000:5000" 
+    #ports:
+      #- "127.0.0.1:5000:5000" 
     container_name: "docker_hub"
+
+  nginx:
+    image: beevelop/nginx-basic-auth
+    restart: always
+    volumes:
+      - $PWD/nginx_config/auth.htpasswd:/etc/nginx/auth.htpasswd
+    ports:
+      - "5000:80" 
+    environment:
+      - HTPASSWD='foo:$apr1$odHl5EJN$KbxMfo86Qdve2FH4owePn.'
+      - FORWARD_PORT=5000
+      - FORWARD_HOST='registry'
+    container_name: "docker_hub_nginx"

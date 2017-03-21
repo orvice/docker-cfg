@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  portainer:
+    image: portainer/portainer
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+    ports:
+     - "9301:9000"
+ 
