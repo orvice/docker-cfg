@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  mysql:
+    image: mysql
+    restart: always
+    volumes:
+      - $PWD/config://etc/mysql/conf.d
+      - $PWD/data:/var/lib/mysql
+    ports:
+     - "127.0.0.1:3306:3306"
+ 
