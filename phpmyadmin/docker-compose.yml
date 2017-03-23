@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+     - PMA_ARBITRARY=1
+    restart: always
+    links:
+     - mysql:db 
+    ports:
+     - 8080:80
+    volumes:
+     - /sessions
+ 

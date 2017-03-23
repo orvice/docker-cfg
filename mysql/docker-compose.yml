@@ -5,8 +5,11 @@ services:
     image: mysql
     restart: always
     volumes:
-      - $PWD/config://etc/mysql/conf.d
+      - $PWD/config:/etc/mysql
       - $PWD/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=abc
     ports:
      - "127.0.0.1:3306:3306"
+    container_name: mysql_main
  
