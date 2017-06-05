@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  redis:
+    image: influxdb
+    restart: always
+    volumes:
+      - $PWD/data:/var/lib/influxdb
+    ports:
+     - "127.0.0.1:8086:8086"
+ 
