@@ -1,7 +1,7 @@
 version: "2"
 
 services:
-  redis:
+  influxdb:
     image: influxdb
     restart: always
     volumes:
