@@ -1,0 +1,28 @@
+version: "2"
+
+services:
+  influxdb:
+    image: influxdb
+    restart: always
+    volumes:
+      - $PWD/data:/var/lib/influxdb
+    ports:
+      - "127.0.0.1:8086:8086"
+      - "127.0.0.1:8083:8083"
+      - "127.0.0.1:2003:2003"
+    environment:
+      - INFLUXDB_ADMIN_ENABLED=true
+
+  collectd:
+    image: revett/collectd
+    environment:
+      - CONFIG_TYPE=influxdb
+      - EP_HOST=influxdb
+      - EP_PORT=2003
+  
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - $PWD/grafana:/var/lib/grafana
