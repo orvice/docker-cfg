@@ -1,0 +1,22 @@
+version: "2"
+
+services:
+  transmission:
+    image: linuxserver/transmission
+    restart: always
+    volumes:
+      - $PWD/downloads:/downloads
+      - $PWD/watch:/watch
+      - $PWD/config:/config
+    ports:
+     - "9091:9091"
+     - "51413:51413/udp"
+
+  h5ai:
+    image: clue/h5ai
+    restart: always
+    volumes:
+      - $PWD/downloads:/var/www 
+    ports:
+     - "8080:80"
+ 
