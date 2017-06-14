@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3
+    restart: always
+    volumes:
+      - $PWD/data:/var/lib/rabbitmq
+    ports:
+     - "5672:5672"
+ 
