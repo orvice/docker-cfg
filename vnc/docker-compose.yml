@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  redis:
+    image: consol/ubuntu-xfce-vnc
+    restart: always
+    volumes:
+      - $PWD/data/data
+    ports:
+      - "6901:6901"
+      - "5901:5901"
+    environment:
+      - VNC_PW=my-pw
+ 

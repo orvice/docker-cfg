@@ -7,7 +7,7 @@ services:
     environment:
      - PMA_ARBITRARY=1
     restart: always
-    links:
+    external_links:
      - mysql:db 
     ports:
      - 8080:80
