@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  peach:
+    image: peachdocs/peach
+    restart: always
+    volumes:
+      - $PWD/peach:/data/peach
+    ports:
+     - "5555:5555"
+ 
