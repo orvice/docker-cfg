@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    restart: always
+    environment:
+      - API_URL=http://generator.swagger.io/api/swagger.json
+    ports:
+     - "8080:8080"
+ 
