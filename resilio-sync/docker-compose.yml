@@ -1,0 +1,11 @@
+version: "2"
+
+resilio-sync:
+  redis:
+    image: resilio/sync
+    restart: always
+    volumes:
+      - ./data:/mnt/sync
+    ports:
+     - "8888:8888"
+     - "55555:55555"
