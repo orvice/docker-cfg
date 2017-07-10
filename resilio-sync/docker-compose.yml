@@ -1,7 +1,7 @@
 version: "2"
 
-resilio-sync:
-  redis:
+services:
+  resilio-sync:
     image: resilio/sync
     restart: always
     volumes:
