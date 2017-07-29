@@ -2,7 +2,7 @@ version: "2"
 
 services:
   redis:
-    image: metabase/metabase
+    metabase: metabase/metabase
     restart: always
     volumes:
       - $PWD/metabase-data:/metabase-data
