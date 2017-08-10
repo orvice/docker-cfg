@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  wiki:
+    image: mprasil/dokuwiki
+    restart: always
+    volumes:
+      - "./data:/dokuwiki/data:rw"
+      - "./lib/plugins:/dokuwiki/lib/plugins:rw"
+      - "./conf:/dokuwiki/conf:rw"
+      - "./tpl:/dokuwiki/lib/tpl:rw"
+      - "./log:/var/log:rw"
+    ports:
+      - "80:80"
+ 
