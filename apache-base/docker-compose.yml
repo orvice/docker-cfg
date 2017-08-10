@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  web:
+    image: orvice/apache-base
+    restart: always
+    volumes:
+      - ./html:/var/www/html
+    ports:
+     - "80:80"
+ 
