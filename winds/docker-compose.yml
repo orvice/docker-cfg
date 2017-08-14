@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  web:
+    image: getstream/winds
+    restart: always
+    environment:
+      - API_BASE_URL=https://
+    ports:
+     - "3000:3000"
+    container_name: winds
+ 
+  mongo:
+    image: mongodb
+    restart: always
+    volumes:
+      - ./data:/data/db
+      - ./data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=abc
+    container_name: winds-mongo

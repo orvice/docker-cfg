@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  www:
+    image: clue/h5ai
+    restart: always
+    volumes:
+      - ./data:/var/www
+    ports:
+     - "8083:80"
+ 
