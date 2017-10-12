@@ -1,0 +1,26 @@
+version: "2"
+
+services:
+  flarum:
+    image: mondedie/docker-flarum:0.1.0-beta.7-stable
+    container_name: flarum
+    links:
+      - mariadb:mariadb
+    environment:
+      - FORUM_URL=https://forum.domain.tld
+      - DB_PASS=xxxxxxxx
+    volumes:
+      - ./flarum/assets:/flarum/app/assets
+      - ./flarum/extensions:/flarum/app/extensions
+
+  mariadb:
+    image: mariadb:10.1
+    container_name: flarum-mariadb
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=xxxxxxxx
+      - MYSQL_DATABASE=flarum
+      - MYSQL_USER=flarum
+      - MYSQL_PASSWORD=xxxxxxxx
+   

@@ -1,0 +1,21 @@
+version: '2'
+
+services:  
+
+  owncloud:
+    image: nextcloud
+    ports:
+      - 8080:80
+    volumes:
+      - ./html:/var/www/html
+      - ./apps:/var/www/html/custom_apps
+      - ./config:/var/www/html/config
+      - ./data:/var/www/html/data
+    networks:
+      - dbnetwork
+    container_name: nextcloud
+
+
+networks:
+  dbnetwork:
+    external: true
