@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  consul:
+    image: progrium/consul
+    restart: always
+    ports:
+      - "8500:8500"
+      - "8400:8400"
+      - "8600:53"
+    command: "-server -bootstrap-expect 3 -ui-dir /ui"
+    container_name: "consul-dev"
