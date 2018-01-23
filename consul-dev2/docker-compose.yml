@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  consul:
+    image: consul
+    restart: always
+    hostname: "consul-01"
+    ports:
+      - 8500:8500
+    labels:
+      NAME: "consul"
+    volumes:
+      - ./config:/consul/config
+      - ./data:/consul/data
+    command: ["agent"]
