@@ -5,8 +5,8 @@ services:
     image: mysql
     restart: always
     volumes:
-      - $PWD/config:/etc/mysql
-      - $PWD/data:/var/lib/mysql
+      - ./config:/etc/mysql
+      - ./data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=abc
     ports:
